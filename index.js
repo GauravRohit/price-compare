@@ -1,7 +1,7 @@
 
 var https = require("https");
 var options = {
-    hostname: 'price-api.datayuge.com',
+    hostname: 'http://price-api.datayuge.com',
     port: 443,
     path: '/api/v1/compare/search?product=iphone%207&api_key=Mb6gnIUu4vTJVmcVtxo2dF67X9EPSyAWPJf',
     method: 'GET'
