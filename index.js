@@ -1,3 +1,5 @@
+
+var https = require("https");
 var options = {
     hostname: 'price-api.datayuge.com',
     port: 443,
