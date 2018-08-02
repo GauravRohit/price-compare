@@ -20,6 +20,9 @@ var req = https.request(options, function(res) {
         var wunder=JSON.parse(body);
         console.log("__");
         console.log(wunder);
+res.json{(
+'data':wunder
+)}
        
     });
 });
