@@ -16,11 +16,11 @@ app.use(express.static(__dirname + '/public'));
 // set the home page route
 var phone;
 app.post('/', function(req, res) {
-//var w = getWeather();
+var w = main();
 	// ejs render automatically looks in the views folder
 	res.json({
     'fulfillmentText':'Hello Ankur',
-    'fulfillmentMessages':[{"text":{"text":[phone]}}],
+    'fulfillmentMessages':[{"text":{"text":[w]}}],
     'source':'gmail'
   })
 });
@@ -42,9 +42,7 @@ function initialize() {
             if (err) {
                 reject(err);
             } else {
-
                 resolve(JSON.parse(body));
-
             }
         })
     })
@@ -52,7 +50,6 @@ function initialize() {
 }
 function main(){
 app.get('/', function(req, res  ) {
-
     var initializePromise = initialize();
     initializePromise.then(function(result) {
         phone  = result;
@@ -65,8 +62,9 @@ app.get('/', function(req, res  ) {
     })
 
 })
+return phone;
 }
-main();
+
 
 /*function getWeather(){
   var url = 'https://price-api.datayuge.com/api/v1/compare/search?product=oneplus%015t&api_key=4ECmIcYuCkqKCAfbYzkzeulI9Vgpwe53Qnc';
