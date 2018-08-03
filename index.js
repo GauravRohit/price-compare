@@ -53,7 +53,7 @@ function initialize() {
 function main(){
     var initializePromise = initialize();
     initializePromise.then(function(result) {
-        phone  = 'Price of Rohit is '+result.data[0].product_lowest_price;
+        phone  = 'Price of '+result.data[0].product_title +' is '+result.data[0].product_lowest_price;
 
 
         console.log(phone)

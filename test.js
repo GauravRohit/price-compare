@@ -21,7 +21,7 @@ app.post('/', function(req, res) {
 
 	// ejs render automatically looks in the views folder
 	res.json({
-    'fulfillmentText':phoness,
+    'fulfillmentText':phone,
     'fulfillmentMessages':[{"text":{"text":[phone]}}],
     'source':'gmail'
   })
@@ -53,7 +53,7 @@ function initialize() {
 function main(){
     var initializePromise = initialize();
     initializePromise.then(function(result) {
-        phone  = 'Price of Rohit is '+result.data[0].product_lowest_price;
+        phone  = result.data[0];
 
 
         console.log(phone)
