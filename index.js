@@ -14,11 +14,11 @@ app.use(express.static(__dirname + '/public'));
 
 // set the home page route
 app.post('/', function(req, res) {
-var w = getWeather();
+//var w = getWeather();
 	// ejs render automatically looks in the views folder
 	res.json({
     'fulfillmentText':'Hello Ankur',
-    'fulfillmentMessages':[{"text":{"text":["asdfghjk"]}}],
+    'fulfillmentMessages':[{"text":{"text":[w]}}],
     'source':'gmail'
   })
 });
@@ -43,4 +43,3 @@ http.request(options, function(res) {
   return chunk;
 }).end();
 }
-*/
