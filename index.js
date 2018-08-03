@@ -64,6 +64,8 @@ app.get('/', function(req, res  ) {
 
 })
 }
+main();
+
 /*function getWeather(){
   var url = 'https://price-api.datayuge.com/api/v1/compare/search?product=oneplus%015t&api_key=4ECmIcYuCkqKCAfbYzkzeulI9Vgpwe53Qnc';
   var options = {
