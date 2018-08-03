@@ -20,7 +20,9 @@ app.post('/', function(req, res) {
  // var w = main();
   // var user_id = req.body.queryResult.parameters['geo-city'];
   console.log("------------------------------")
-  console.log(req.body.parameters)
+  //.console.log(body.queryResult.parameters)
+  let parameters = request.body.result.parameters;
+  console.log(parameters)
   console.log("------------------------------")
 	// ejs render automatically looks in the views folder
 	res.json({
