@@ -28,12 +28,22 @@ app.listen(port, function() {
 
 
 function getWeather(){
-  result = undefined;
   var url = 'https://price-api.datayuge.com/api/v1/compare/search?product=oneplus%015t&api_key=4ECmIcYuCkqKCAfbYzkzeulI9Vgpwe53Qnc';
-  console.log(url);
-  var req = request.get(url,cb);
-  while(result === undefined){
-    require('deasync').runLoopOnce();
-  }
-  return result;
+  var options = {
+  host: url,
+  port: 80,
+  path: '/resource?id=foo&bar=baz',
+  method: 'GET'
+};
+
+http.request(options, function(res) {
+  console.log('STATUS: ' + res.statusCode);
+  console.log('HEADERS: ' + JSON.stringify(res.headers));
+  res.setEncoding('utf8');
+  res.on('data', function (chunk) {
+    console.log('BODY: ' + chunk);
+  });
+
+}).end();
+return chunk;
 }
