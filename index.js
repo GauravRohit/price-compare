@@ -12,7 +12,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 
 // set the home page route
-app.get('/', function(req, res) {
+app.post('/', function(req, res) {
 
 	// ejs render automatically looks in the views folder
 	res.json({
