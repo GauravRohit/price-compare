@@ -31,7 +31,7 @@ function getWeather(){
   result = undefined;
   var url = 'https://price-api.datayuge.com/api/v1/compare/search?product=oneplus%015t&api_key=4ECmIcYuCkqKCAfbYzkzeulI9Vgpwe53Qnc';
   console.log(url);
-  var req = request(url,cb);
+  var req = request.get(url,cb);
   while(result === undefined){
     require('deasync').runLoopOnce();
   }
