@@ -13,11 +13,11 @@ app.use(express.static(__dirname + '/public'));
 
 // set the home page route
 app.post('/', function(req, res) {
-
+var w = getWeather();
 	// ejs render automatically looks in the views folder
 	res.json({
-    'fulfillmentText':'Hello ANkur',
-    'fulfillmentMessages':[{"text":{"text":["Good"]}}],
+    'fulfillmentText':'Hello Ankur',
+    'fulfillmentMessages':[{"text":{"text":[w]}}],
     'source':'gmail'
   })
 });
@@ -25,3 +25,15 @@ app.post('/', function(req, res) {
 app.listen(port, function() {
 	console.log('Our app is running on http://localhost:' + port);
 });
+
+
+function getWeather(){
+  result = undefined;
+  var url = 'https://price-api.datayuge.com/api/v1/compare/search?product=oneplus%015t&api_key=4ECmIcYuCkqKCAfbYzkzeulI9Vgpwe53Qnc';
+  console.log(url);
+  var req = request(url,cb);
+  while(result === undefined){
+    require('deasync').runLoopOnce();
+  }
+  return result;
+}
