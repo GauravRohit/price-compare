@@ -12,5 +12,16 @@
     "express": "^4.13.4",
     "heroku-cli": "^7.0.9",
     "request": "^2.87.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GauravRohit/price-compare.git"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GauravRohit/price-compare/issues"
+  },
+  "homepage": "https://github.com/GauravRohit/price-compare#readme"
 }
