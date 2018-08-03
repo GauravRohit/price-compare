@@ -1,11 +1,11 @@
 var express = require('express');
 var app = express();
 var server = require('https').createServer(app);
-
+var request=require("request")
 
 // set the port of our application
 // process.env.PORT lets the port be set by Heroku
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 8083;
 
 // set the view engine to ejs
 app.set('view engine', 'ejs');
@@ -15,19 +15,21 @@ app.use(express.static(__dirname + '/public'));
 
 // set the home page route
 var phone;
+main();
 app.post('/', function(req, res) {
-var w = main();
+ // var w = main();
+
 	// ejs render automatically looks in the views folder
 	res.json({
     'fulfillmentText':'Hello Ankur',
-    'fulfillmentMessages':[{"text":{"text":[w]}}],
+    'fulfillmentMessages':[{"text":{"text":[phone]}}],
     'source':'gmail'
   })
 });
-
-console.log(phone);
+// console.log(phone)
+;
 app.listen(port, function() {
-	console.log('Our app is running on http://localhost:' + port);
+	console.log('Our app is running on http://localhost' + port);
 });
 
 function initialize() {
@@ -49,35 +51,16 @@ function initialize() {
 
 }
 function main(){
-app.get('/', function(req, res  ) {
     var initializePromise = initialize();
     initializePromise.then(function(result) {
         phone  = result;
-        res.json({
-        	success:true,
-        	result:phone
-        })
+
+
+        console.log(phone)
+
+        return phone;
     }, function(err) {
         console.log(err);
     })
 
-})
-return phone;
 }
-
-
-/*function getWeather(){
-  var url = 'https://price-api.datayuge.com/api/v1/compare/search?product=oneplus%015t&api_key=4ECmIcYuCkqKCAfbYzkzeulI9Vgpwe53Qnc';
-  var options = {
-  host: url,
-  method: 'GET'
-};
-
-http.request(options, function(res) {
-  res.setEncoding('utf8');
-  res.on('data', function (chunk) {
-    console.log('BODY: ' + chunk);
-  });
-  return chunk;
-}).end();
-}*/
