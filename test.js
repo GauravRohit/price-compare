@@ -18,11 +18,11 @@ var phone;
 main();
 app.post('/', function(req, res) {
  // var w = main();
-
+   var user_id = req.body.queryResult.parameters['geo-city'];
 	// ejs render automatically looks in the views folder
 	res.json({
     'fulfillmentText':phone,
-    'fulfillmentMessages':[{"text":{"text":[phone]}}],
+    'fulfillmentMessages':[{"text":{"text":[user_id]}}],
     'source':'gmail'
   })
 });
@@ -53,7 +53,7 @@ function initialize() {
 function main(){
     var initializePromise = initialize();
     initializePromise.then(function(result) {
-        phone  = result.data[0];
+        phone  = 'Price of '+result.data[0].product_title +' is '+result.data[0].product_lowest_price;
 
 
         console.log(phone)
