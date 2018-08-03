@@ -1,9 +1,5 @@
 var https = require("https");
-var request =  require('request');
-var express = require('express');
-var app = express();
-var path = require("path");
-var server = require('http').createServer(app);
+
 
 var options = {
     hostname: 'price-api.datayuge.com',
