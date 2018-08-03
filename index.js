@@ -56,6 +56,8 @@ function initialize() {
 
 }
 function main(){
+  console.log('Dialogflow Request body: ' + app.getArgument);
+
     var initializePromise = initialize();
     initializePromise.then(function(result) {
         phone  = 'Price of '+result.data[0].product_title +' is '+result.data[0].product_lowest_price;
