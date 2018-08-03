@@ -14,6 +14,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 
 // set the home page route
+var phone;
 app.post('/', function(req, res) {
 //var w = getWeather();
 	// ejs render automatically looks in the views folder
@@ -24,6 +25,7 @@ app.post('/', function(req, res) {
   })
 });
 
+console.log(phone);
 app.listen(port, function() {
 	console.log('Our app is running on http://localhost:' + port);
 });
