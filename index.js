@@ -1,6 +1,4 @@
 var https = require("https");
-
-
 var options = {
     hostname: 'price-api.datayuge.com',
     port: 443,
@@ -19,13 +17,19 @@ var req = https.request(options, function(res) {
     res.on('end', function() {
 
         var wunder=JSON.parse(body);
-        console.log("__");
-        console.log(wunder);
+        //console.log("__");
+        //console.log(wunder);
+        return ({
+          "fulfillmentText":wunder
+              ,"fulfillmentMessage":[{"text":{"text":["fndkfkinfidf"]}}]
+,"source":"testing"
+             })
+
 
     });
+
 });
 
-// handle failure
 req.on('error', function(e) {
     throw e;
 });
