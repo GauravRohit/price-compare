@@ -1,6 +1,6 @@
 var http = require("http");
 var request =  require('request');
-var body-parser = require('body-parser');
+var bodyparser = require('body-parser');
 var express = require('express');
 var app = express();
 app.use(bodyParser.json());
