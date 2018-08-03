@@ -20,9 +20,7 @@ var req = https.request(options, function(res) {
         //console.log("__");
         //console.log(wunder);
         return ({
-          "fulfillmentText":"Getting all phones"
-              ,"fulfillmentMessage":[{"text":{"text":["fndkfkinfidf"]}}]
-,"source":"testing"
+          "Message":"Success"
              })
 
 
