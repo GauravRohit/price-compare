@@ -18,12 +18,12 @@ var phone;
 main();
 app.post('/', function(req, res) {
  // var w = main();
-  // var user_id = req.body.queryResult.parameters['geo-city'];
-  console.log("------------------------------")
-  //.console.log(body.queryResult.parameters)
-    console.log('Dialogflow Request body: ' + req.body);
-    console.log('Dialogflow Request body: ' + JSON.stringify(req.body));
-  console.log("------------------------------")
+  // // var user_id = req.body.queryResult.parameters['geo-city'];
+  // console.log("------------------------------")
+  // //.console.log(body.queryResult.parameters)
+  //   console.log('Dialogflow Request body: ' + req.body);
+  //   console.log('Dialogflow Request body: ' + JSON.stringify(req.body));
+  // console.log("------------------------------")
 	// ejs render automatically looks in the views folder
 	res.json({
     'fulfillmentText':"",
@@ -46,6 +46,9 @@ function initialize() {
     return new Promise(function(resolve, reject) {
     	// Do async job
         request.get(options, function(err, resp, body) {
+  console.log("------------------------------")
+          console.log(resp)
+            console.log("------------------------------")
             if (err) {
                 reject(err);
             } else {
@@ -56,7 +59,7 @@ function initialize() {
 
 }
 function main(){
-  console.log('Dialogflow Request body: ' + app.getArgument);
+
 
     var initializePromise = initialize();
     initializePromise.then(function(result) {
