@@ -21,8 +21,7 @@ app.post('/', function(req, res) {
   // var user_id = req.body.queryResult.parameters['geo-city'];
   console.log("------------------------------")
   //.console.log(body.queryResult.parameters)
-  let parameters = request.body.result.parameters;
-  console.log(parameters)
+    console.log('Dialogflow Request body: ' + JSON.stringify(req.body));
   console.log("------------------------------")
 	// ejs render automatically looks in the views folder
 	res.json({
