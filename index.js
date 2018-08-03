@@ -40,6 +40,6 @@ http.request(options, function(res) {
   res.on('data', function (chunk) {
     console.log('BODY: ' + chunk);
   });
+  return chunk;
 }).end();
-return chunk;
 }
