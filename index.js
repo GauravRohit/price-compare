@@ -12,7 +12,7 @@ var city = req.body.queryResult.parameters['geo-city'];
 var w = getWeather(city);
 let response = " ";
 let responseObj ={"fulfillmentText":"hahahahahahah"
-                  ,"fulfillmentMessage":[{"text":{"text":["lolo"]}])
+                  ,"fulfillmentMessage":[{"text":{"text":["lolo"]}]
                   ,"source":""
 })
 var apiKey = 'f6dacb03346d39ed9172cd49941688a3'
