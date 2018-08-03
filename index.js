@@ -36,4 +36,3 @@ function getWeather(city){
   }
   return result;
 }
-*/
