@@ -15,10 +15,16 @@ app.use(express.static(__dirname + '/public'));
 
 // set the home page route
 var phone;
+
+
+app.post('/callhook', function(req, res) {
 main();
+	// ejs render automatically looks in the views folder
+	//res.render('index');
+});
 app.post('/', function(req, res) {
   console.log("<<<<<<<------------------------------")
-  console.log(req)
+  console.log(req.body)
   console.log("------------------------------>>>>>>>")
   res.json({
     'fulfillmentText':"",
