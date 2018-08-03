@@ -17,7 +17,7 @@ app.post('/', function(req, res) {
 	// ejs render automatically looks in the views folder
 	res.json({
     'fulfillmentText':'Hello ANkur',
-    'fulfillmentMessage':'There',
+    'fulfillmentMessage':[{"text":{"text":["Good"]}]),
     'source':'gmail'
   })
 });
