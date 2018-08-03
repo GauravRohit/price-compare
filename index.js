@@ -17,15 +17,9 @@ app.use(express.static(__dirname + '/public'));
 var phone;
 main();
 app.post('/', function(req, res) {
- // var w = main();
-  // // var user_id = req.body.queryResult.parameters['geo-city'];
-  // console.log("------------------------------")
-  // //.console.log(body.queryResult.parameters)
-  //   console.log('Dialogflow Request body: ' + req.body);
-  //   console.log('Dialogflow Request body: ' + JSON.stringify(req.body));
-  // console.log("------------------------------")
-	// ejs render automatically looks in the views folder
-	res.json({
+  console.log("<<<<<<<------------------------------")
+  console.log(req)
+  console.log("------------------------------>>>>>>>")	res.json({
     'fulfillmentText':"",
     'fulfillmentMessages':[{"text":{"text":["user_id"]}}],
     'source':'gmail'
@@ -46,9 +40,7 @@ function initialize() {
     return new Promise(function(resolve, reject) {
     	// Do async job
         request.get(options, function(err, resp, body) {
-          console.log("<<<<<<<------------------------------")
-          console.log(resp)
-          console.log("------------------------------>>>>>>>")
+
             if (err) {
                 reject(err);
             } else {
