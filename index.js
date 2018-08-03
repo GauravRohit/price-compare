@@ -36,11 +36,11 @@ function getWeather(){
 };
 
 http.request(options, function(res) {
+  console.log(res);
   res.setEncoding('utf8');
   res.on('data', function (chunk) {
     console.log('BODY: ' + chunk);
   });
-return chunk;
 }).end();
 
 }
