@@ -53,7 +53,7 @@ function initialize() {
 function main(){
     var initializePromise = initialize();
     initializePromise.then(function(result) {
-        phone  = result.data;
+        phone  = result.data[0];
 
 
         console.log(phone)
