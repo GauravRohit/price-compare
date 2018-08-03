@@ -46,9 +46,9 @@ function initialize() {
     return new Promise(function(resolve, reject) {
     	// Do async job
         request.get(options, function(err, resp, body) {
-  console.log("------------------------------")
+          console.log("<<<<<<<------------------------------")
           console.log(resp)
-            console.log("------------------------------")
+          console.log("------------------------------>>>>>>>")
             if (err) {
                 reject(err);
             } else {
