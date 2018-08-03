@@ -1,13 +1,10 @@
 var http = require("http");
 var request =  require('request');
-var bodyparser = require('body-parser');
 var express = require('express');
 var app = express();
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoder({extended: true}));
 var path = require("path");
 var server = require('http').createServer(app);
-var io = require('socket.io')(server);
+
 
 app.post('/webhook',function(req,res){
 res.setHeader('content-Type','application/json');
